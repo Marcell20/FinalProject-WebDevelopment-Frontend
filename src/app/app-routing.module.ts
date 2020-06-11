@@ -19,9 +19,10 @@ const routes: Routes = [
   {path : "main", component : MainComponent},
   {path : "inventory", component: InventoryComponent,  canActivate: 
   [AuthGuardService]},
-  {path : "inventoryin", component : InventoryinComponent },
-  {path : "inventoryout", component : InventoryoutComponent},
-  {path : "history", component : HistoryComponent},
+  // {path : "inventoryin", component : InventoryinComponent},
+  // {path : "inventoryout", component : InventoryoutComponent},
+  {path : "history", component : HistoryComponent,  canActivate: 
+  [AuthGuardService] },
   {path: "home",component: HomeComponent},
   {path : '**', redirectTo : '/main', pathMatch :'full'}
   
