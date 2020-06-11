@@ -31,8 +31,16 @@ export class updatedata{
 }
 
 export class newhistory{
-  ItemId: any
-  ItemName: any
+  itemid: any
+  itemname: any
+  quantity : any
+  description : any
+  type : any
+}
+
+export class newedithistory{
+  id: any
+  Name: any
   Quantity : any
   Description : any
   Type : any
@@ -70,9 +78,7 @@ export class InventoryService {
     return this.http.post('https://api.invform.me/history/create',data)
    }
 
-   editHistoryData(id){
-    return this.http.get(`https:/api.invform.me/history/edit/${id}`)
-   }
+
 
 
 

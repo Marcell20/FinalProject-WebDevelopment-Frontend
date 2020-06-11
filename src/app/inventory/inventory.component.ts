@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
-import { InventoryService,datatable, newdata, editdata, newhistory, updatedata } from './inventory.service';
+import { InventoryService,datatable, newdata, editdata, newhistory, updatedata, newedithistory } from './inventory.service';
 import { NgForm } from '@angular/forms';
 import { HistoryService } from '../history/history.service';
 import { HistoryComponent } from '../history/history.component';
@@ -22,6 +22,7 @@ export class InventoryComponent {
   edititem = new editdata();
   historydata = new newhistory();
   updateitem = new updatedata();
+  edithistorydata = new editdata();
   
   
   constructor(private inven : InventoryService, private auth: AuthenticationService, ) { }
@@ -89,9 +90,6 @@ export class InventoryComponent {
     if(this.updateitem.description==null){
       this.updateitem.description = description
     }
-    
-
-
     console.log(this.updateitem)
     this.inven.updateData(id,this.updateitem).subscribe(
       (res)=>{
@@ -117,7 +115,13 @@ export class InventoryComponent {
     )
   }
 
-  historycreate(){
+  historycreate(id,name){
+    if(this.historydata.itemname==null){
+      this.historydata.itemname = name;
+    }
+    if(this.historydata.itemid==null){
+      this.historydata.itemid = id;
+    }
     this.inven.createHistoryData(this.historydata).subscribe(
       res=>{
         console.log(res);
@@ -125,6 +129,18 @@ export class InventoryComponent {
       },
       err=>{
         console.error(err);
+      }
+    )
+  }
+
+  historydataedit(id){
+    this.inven.editData(id).subscribe(
+      (data)=>{
+        this.edithistorydata = data['data'][0]
+        console.log(this.edithistorydata)
+      },
+      err=>{
+        console.log(err);
       }
     )
   }

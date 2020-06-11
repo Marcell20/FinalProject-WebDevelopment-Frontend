@@ -11,6 +11,20 @@ export class historydata{
   description : any
   created_at : any
   updated_at : any
+  startdate : any
+  enddate : any
+}
+
+export class edithistorydata{
+  id : any
+  quantity : any
+  description : any
+}
+
+export class updatehistorydata{
+  id : any
+  Quantity : any
+  Description : any
 }
 
 
@@ -24,5 +38,16 @@ export class HistoryService {
   getHistoryData(data: historydata): Observable<any>{
     return this.http.post('https://api.invform.me/history/view',data)
   }
+  
+  deleteDataHistory(id){
+    return this.http.delete(`https:/api.invform.me/history/delete/${id}`)
+  }
 
+  editHistoryData(id){
+    return this.http.get(`https:/api.invform.me/history/edit/${id}`)
+   }
+
+  updateHistoryData(id,data){
+    return this.http.get(`https:/api.invform.me/history/update/${id}`,data)
+  }
 }

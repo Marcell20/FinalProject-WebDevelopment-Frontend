@@ -35,11 +35,11 @@
                               Filter / Search History 
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form (ngSubmit)="listhistory()">
                                     <div class="row pb-3">
                                         <div class="col-3">
                                             <label for=""> Search by Start Date </label>
-                                            <input type="datetime-local" id="" class="form-control"> 
+                                            <input type="datetime-local" id="" class="form-control" name="startdate" [(ngModel)]="historylist.startdate"> 
                                         </div>
                                         <div style="padding-top: 3.50%;">
                                             <svg class="bi bi-arrow-left-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -49,31 +49,27 @@
                                               </svg>
                                         </div>
                                         <div class="col-3">
-                                            <label for=""> Search by End Data </label>
-                                            <input type="datetime-local" id="" class="form-control">
+                                            <label for=""> Search by End Date </label>
+                                            <input type="datetime-local" id="" class="form-control" name="enddate" [(ngModel)]="historylist.enddate">
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="row">
                                         <div class="col">
-                                            <label for=""> Search by Date : </label>
-                                            <input type="date" id="" class="form-control">
-                                        </div>
-                                        <div class="col">
                                             <label for=""> Search by Name :</label>
-                                            <input type="search" id="" class="form-control" placeholder="by Name">
+                                            <input type="search" id="" class="form-control" placeholder="by Name" name="name" [(ngModel)]="historylist.itemname">
                                         </div>
                                         <div class="col">
                                             <label for="">Search by IN / OUT :</label>
-                                            <input type="search" id="" class="form-control" placeholder="by IN / OUT">
+                                            <input type="search" id="" class="form-control" placeholder="by IN / OUT" name="type" [(ngModel)]="historylist.type" >
                                         </div>
                                         <div class="col">
                                             <label for="">Search by Description :</label>
-                                            <input type="search" id="" class="form-control" placeholder="by Description">
+                                            <input type="search" id="" class="form-control" placeholder="by Description" name="description" [(ngModel)]="historylist.description">
                                         </div>
                                     </div>
+                                    <button type="submit" class="btn btn-secondary btn-block" style="margin-top: 23.5pt;"> Search  </button>
                                 </form>
-                                <button type="button" class="btn btn-secondary btn-block" style="margin-top: 23.5pt;"> Search  </button>
   
                             </div>
                         </div>
@@ -109,7 +105,7 @@
                                     <!-- <td>10/06/2020 00:44</td> -->
                                     <td>
                                         <button class="btn btn-sm">
-                                            <svg class="bi bi-trash-fill" width="0.7cm" height="0.7cm" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <svg class="bi bi-trash-fill" width="0.7cm" height="0.7cm" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" (click)=deletehistory(data.id)>
                                                 <path fill-rule="evenodd" d="M2.5 1a1 1 0 00-1 1v1a1 1 0 001 1H3v9a2 2 0 002 2h6a2 2 0 002-2V4h.5a1 1 0 001-1V2a1 1 0 00-1-1H10a1 1 0 00-1-1H7a1 1 0 00-1 1H2.5zm3 4a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7a.5.5 0 01.5-.5zM8 5a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7A.5.5 0 018 5zm3 .5a.5.5 0 00-1 0v7a.5.5 0 001 0v-7z" clip-rule="evenodd"/>
                                             </svg>
                                         </button>
@@ -139,14 +135,18 @@
                                 </button>
                                 </div>
                                 <div class="modal-body">
-                                <form action="" method="POST">
+                                <form (ngSubmit)=" historydataupdate(edit.id,edit.quantity,edit.description)">
+                                    <div class="form-group">
+                                        <label for="ItemId">Item Id :</label>
+                                        <input name="itemId" type="number" disabled class="form-control" id="itemId" value='{{edit.id}}' [(ngModel)]="updatehistory.id">
+                                    </div>
                                 <div class="form-group">
                                     <label for="ItemQty">Item Quantity :</label>
-                                    <input name="itemqty" type="number" class="form-control" id="itemqty" placeholder="Item Quantity">
+                                    <input name="itemqty" type="number" class="form-control" id="itemqty" placeholder="Item Quantity" value='{{edit.quantity}}' [(ngModel)]="updatehistory.Quantity">
                                 </div>
                                 <div class="form-group">
                                     <label for="itemdescription">Item Description :</label>
-                                    <input name="itemdescription" class="form-control" id="itemdescription" placeholder="Item Description">
+                                    <input name="itemdescription" class="form-control" id="itemdescription" placeholder="Item Description" value='{{edit.description}}' [(ngModel)]="updatehistory.Description">
                                 </div>
                                 <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
