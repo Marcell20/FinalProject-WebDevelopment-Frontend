@@ -23,8 +23,8 @@ export class edithistorydata{
 
 export class updatehistorydata{
   id : any
-  Quantity : any
-  Description : any
+  quantity : any
+  description : any
 }
 
 
@@ -48,6 +48,6 @@ export class HistoryService {
    }
 
   updateHistoryData(id,data){
-    return this.http.get(`https:/api.invform.me/history/update/${id}`,data)
+    return this.http.post(`https:/api.invform.me/history/update/${id}`,data)
   }
 }

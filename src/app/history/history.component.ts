@@ -76,15 +76,20 @@ updatehistory = new updatehistorydata();
   }
 
   historydataupdate(id,quantity,description){
-    if(this.updatehistory.Quantity==null){
-      this.updatehistory.Quantity = quantity;
+    if(this.updatehistory.quantity==null){
+      this.updatehistory.quantity = quantity;
     }
-    if(this.updatehistory.Description==null){
-      this.updatehistory.Description = description;
+    if(this.updatehistory.description==null){
+      this.updatehistory.description = description;
     }
+    if(this.updatehistory.id==null){
+      this.updatehistory.id = id;
+    }
+    
     this.historyservice.updateHistoryData(id,this.updatehistory).subscribe(
       res=>{
         console.log(res)
+        this.listhistory();
       },
       err=>{
         console.error(err);
