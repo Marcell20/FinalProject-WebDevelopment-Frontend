@@ -10,13 +10,15 @@ import { HistoryComponent } from './history/history.component';
 
 import {AuthenticationService} from './authentication.service';
 import { HomeComponent } from './home/home.component';
+import { AuthGuardService } from './auth-guard.service';
 
 
 const routes: Routes = [
   {path : "login", component : LoginComponent},
   {path : "register", component : RegisterComponent},
   {path : "main", component : MainComponent},
-  {path : "inventory", component: InventoryComponent,},
+  {path : "inventory", component: InventoryComponent,  canActivate: 
+  [AuthGuardService]},
   {path : "inventoryin", component : InventoryinComponent },
   {path : "inventoryout", component : InventoryoutComponent},
   {path : "history", component : HistoryComponent},

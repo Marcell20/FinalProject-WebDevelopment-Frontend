@@ -67,15 +67,9 @@ export class AuthenticationService {
   //   }
   // }
 
-  // public isLoggedIn(): boolean{
-  //   const user= this.getUserDetails()
-  //   if(user){
-  //     return user.exp > Date.now()/1000
-  //   }
-  //   else{
-  //     return false
-  //   }
-  // }
+  public isLoggedIn(){
+    return this.getToken() !== null;
+  }
 
   public register(user: TokenPayLoad): Observable<any>{
     const base = this.http.post('https://api.invform.me/register',user)
