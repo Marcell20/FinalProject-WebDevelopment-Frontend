@@ -15,3 +15,11 @@
     background-repeat: no-repeat;
     background-image: url('../../assets/img/footer.png');
 }
+
+.custom{
+  background-color: #3a3a3a;
+}
+
+.custom2{
+  background-color: #717272;
+}
