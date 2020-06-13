@@ -21,15 +21,15 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                    <a class="nav-link text-light" href="#home">Home
+                    <a class="nav-link text-light" style="cursor: pointer;" (click)="scroll(home)">Home
                         <span class="sr-only">(current)</span>
                     </a>
                     </li>
                     <li class="nav-item ml-5">
-                        <a class="nav-link text-light" href="#about">About</a>
+                        <a class="nav-link text-light" style="cursor: pointer;" (click)="scroll(about)" >About</a>
                     </li>
                     <li class="nav-item ml-5">
-                        <a class="nav-link text-light" href="#features">Features</a>
+                        <a class="nav-link text-light" style="cursor: pointer;" (click)="scroll(features)">Features</a>
                     </li>
                     <li class="nav-item ml-5">
                         <a class="nav-link text-light" href="/login">Sign In</a>
@@ -40,7 +40,7 @@
             </nav>
 
             <!-- Full Page Image Header with Vertically Centered Content -->
-            <header class="masthead" id="home">
+            <header class="masthead" #home>
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12 text-center">
@@ -55,14 +55,14 @@
 
             <!-- Page Content -->
             
-            <section class="py-5 bg-light" >
+            <section class="py-5 bg-light"  #about>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-7 wow slideInLeft">
                         <img src="assets/img/Warehouse.png" alt="logo" style="width: 700px;">
                     </div>
                     <div class="col-lg-4 col-md-5 pt-3 wow slideInRight mt-4" style="border-radius: 15pt;">
-                        <h2 class="font-weight-normal pt-5" id="about">What is Warehouse ?</h2>
+                        <h2 class="font-weight-normal pt-5" >What is Warehouse ?</h2>
                         <p class="font-weight-normal text-secondary"> A place where you can store your item safely and a place to hold every additional item that will be sold or distributed later. But with many products and brand, can you manage your Warehouse well enough ?</p>
                         
                         
@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 </section>
-        <section class="py-5 bg-light" id="features">
+        <section class="py-5 bg-light" #features>
             <div class="container">
                 <div class="wow fadeInUp">
                     <h1 class="text-center"> Our <strong class="text-secondary"> Features </strong> </h1>      
