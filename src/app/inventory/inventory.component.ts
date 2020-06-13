@@ -25,7 +25,7 @@ export class InventoryComponent {
   edithistorydata = new editdata();
   
   
-  constructor(private inven : InventoryService, private auth: AuthenticationService, ) { }
+  constructor(private inven : InventoryService, private auth: AuthenticationService, ) {}
 
   ngOnInit(){
     this.inven.getTableData(this.datalist).subscribe(

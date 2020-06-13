@@ -63,15 +63,15 @@ export class InventoryService {
    }
 
    deleteData(id){
-     return this.http.delete(`https:/api.invform.me/delete/${id}`)
+     return this.http.delete(`https://api.invform.me/delete/${id}`)
    }
 
    updateData(id,data){
-    return this.http.post(`https:/api.invform.me/update/${id}`,data)
+    return this.http.post(`https://api.invform.me/update/${id}`,data)
    }
 
    editData(id){
-     return this.http.get(`https:/api.invform.me/edit/${id}`)
+     return this.http.get(`https://api.invform.me/edit/${id}`)
    }
 
    createHistoryData(data){

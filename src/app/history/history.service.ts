@@ -40,14 +40,14 @@ export class HistoryService {
   }
   
   deleteDataHistory(id){
-    return this.http.delete(`https:/api.invform.me/history/delete/${id}`)
+    return this.http.delete(`https://api.invform.me/history/delete/${id}`)
   }
 
   editHistoryData(id){
-    return this.http.get(`https:/api.invform.me/history/edit/${id}`)
+    return this.http.get(`https://api.invform.me/history/edit/${id}`)
    }
 
   updateHistoryData(id,data){
-    return this.http.post(`https:/api.invform.me/history/update/${id}`,data)
+    return this.http.post(`https://api.invform.me/history/update/${id}`,data)
   }
 }
