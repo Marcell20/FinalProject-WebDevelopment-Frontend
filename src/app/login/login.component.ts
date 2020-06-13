@@ -15,12 +15,12 @@ export class LoginComponent  {
   constructor(private auth: AuthenticationService, private router: Router) { }
 
   login(){
-    console.log(this.credentials)
+    // console.log(this.credentials)
     this.auth.login(this.credentials).subscribe(
       
       (res)=>{
         
-        console.log(res.access_token)
+        // console.log(res.access_token)
         this.auth.saveToken(res.access_token)
         this.auth.getToken()
         this.router.navigateByUrl('/inventory')

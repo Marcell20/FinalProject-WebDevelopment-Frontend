@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
     this.home.getUserData().subscribe(
       (data)=>{
         console.log(data)
-        this.userdata = data['data']
+        this.userdata = data['user']
       },
       err=>{
         console.error(err)
