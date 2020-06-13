@@ -8,9 +8,9 @@
 <body>
     <app-sidebar></app-sidebar>
     <div class="row">
-        <div class="col-lg-2" style="height: 100%;"></div>
-        <div class="col-lg-10 bg-secondary p-5">
-            <div class="container" style="height: 100%;">
+        <div class="col-lg-2 h-100" ></div>
+        <div class="col-lg-10 bg-secondary p-5 h-100">
+            <div class="container h-100" >
                 <section>
                     <h1 class="text-dark">Home</h1>
                     <br>
@@ -23,7 +23,49 @@
                     </nav>
                     <br>
                 </section>
-                <!-- TABLE LIST -->
+                
+                <section class="pb-5">
+                    <div class="card">
+                        <div class="card-header bg-dark text-light">
+                          Profile
+                        </div>
+                        <div class="card-body ">
+                            <div class="row">
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-8 justify-content-center">
+                                    <h2 class="d-flex justify-content-center text-dark p-3"> User Profile :</h2>
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <div>
+                                                <label for="loginas" class="m-3 pt-1 pl-5">Login As :</label>
+                                            </div>
+                                            <div>
+                                                <label for="Email" class="m-3 pl-5">Email :</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-9">
+                                            <div class="row">
+                                                <div class="col-lg-10">
+                                                    <div>
+                                                        <input type="text" class="form-control m-3" disabled name="name">
+                                                    </div>
+                                                    <div>
+                                                        <input type="text" class="form-control m-3" disabled name="name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-block btn-dark mt-5"> Go To Inventory</button>
+                                    <button class="btn btn-block btn-dark"> Go To History</button>
+                                </div>
+                                <div class="col-lg-2"></div>
+                            </div>
+                        </div>
+                      </div>
+                </section>
+                <div style="padding-bottom: 20%;"></div>
                 
             </div>
         </div>
