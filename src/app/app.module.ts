@@ -22,6 +22,7 @@ import { InventoryService } from './inventory/inventory.service';
 import { HomeComponent } from './home/home.component';
 import { HistoryService } from './history/history.service';
 import { AuthGuardService } from './auth-guard.service';
+import { HomeService } from './home/home.service';
 // import {AuthGuardService} from './auth-guard.service'; 
 
 @NgModule({
@@ -44,7 +45,7 @@ import { AuthGuardService } from './auth-guard.service';
     ReactiveFormsModule
 
   ],
-  providers: [AuthenticationService,httpInterceptProviders,InventoryService,HistoryService,AuthGuardService],
+  providers: [AuthenticationService,httpInterceptProviders,InventoryService,HistoryService,AuthGuardService,HomeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
