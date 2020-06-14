@@ -38,7 +38,6 @@ updatehistory = new updatehistorydata();
   }
 
   listhistory(){
-    console.log('HIYA')
     this.historyservice.getHistoryData(this.historylist).subscribe(
       (data)=>{
         console.log(data)

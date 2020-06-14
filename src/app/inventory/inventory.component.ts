@@ -41,7 +41,6 @@ export class InventoryComponent {
   }
   // Search Function and View
   itemlist(){
-    console.log('LOL')
     this.inven.getTableData(this.datalist).subscribe(
       (data)=>{
         console.log(data)
@@ -121,7 +120,7 @@ export class InventoryComponent {
   }
 
   // Add History 
-  historycreate(id,name){
+  historycreate(id,name, form: NgForm){
     if(this.historydata.itemname==null){
       this.historydata.itemname = name;
     }
@@ -131,7 +130,8 @@ export class InventoryComponent {
     this.inven.createHistoryData(this.historydata).subscribe(
       res=>{
         console.log(res);
-        
+        this.itemlist();
+        form.resetForm();
       },
       err=>{
         console.error(err);

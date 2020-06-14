@@ -186,7 +186,7 @@
                         </button>
                         </div>
                         <div class="modal-body">
-                    <form (ngSubmit)="historycreate(edithistorydata.id,edithistorydata.Name)">
+                    <form (ngSubmit)="historycreate(edithistorydata.id,edithistorydata.Name,historyform)" #historyform="ngForm">
                         <div >
                             <div class="form-group">
                                 <label for="ItemID">Item ID : </label>

@@ -15,18 +15,22 @@ export class ForgetpasswordComponent {
 
   // Forget Password Function
   updatepassword(){
-    if(this.update_password.password==''){
+    console.log(this.update_password.password)
+    console.log(this.update_password.new_password)
+    console.log(this.update_password.new_password_confirmation)
+
+    if(this.update_password.password==null){
       alert('Please Fill Password Field')
     }
-    if(this.update_password.new_password == ''){
+    if(this.update_password.new_password == null){
       alert('Please Fill New Password Field')
     }
     
-    if(this.update_password.new_password_confirmation == ''){
+    if(this.update_password.new_password_confirmation == null){
       alert('Please Fill New Password Confirmation Field')
     }
-
     
+
     this.auth.getforgetpassword(this.update_password).subscribe(
       res=>{
         console.log(res)
