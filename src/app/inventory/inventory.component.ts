@@ -39,7 +39,7 @@ export class InventoryComponent {
       }
     )
   }
-  
+  // Search Function and View
   itemlist(){
     console.log('LOL')
     this.inven.getTableData(this.datalist).subscribe(
@@ -53,6 +53,7 @@ export class InventoryComponent {
     )
   }
 
+  // Add Data to Table Stock
   createData(form: NgForm){
     console.log(this.item)
     this.inven.insertData(this.item).subscribe(
@@ -68,6 +69,8 @@ export class InventoryComponent {
     )
   }
 
+  //Delete Data from Stock
+
   datadelete(id){
     this.inven.deleteData(id).subscribe(
       res=>{
@@ -80,6 +83,7 @@ export class InventoryComponent {
     )
   }
   
+  //Udpdate Data from Database
   dataupdate(id,name,quantity,description){
     if(this.updateitem.name==null){
       this.updateitem.name = name
@@ -102,6 +106,7 @@ export class InventoryComponent {
     )
   }
 
+  //Get data to edit and update the function
   dataedit(id){
     this.inven.editData(id).subscribe(
       (data)=>{
@@ -115,6 +120,7 @@ export class InventoryComponent {
     )
   }
 
+  // Add History 
   historycreate(id,name){
     if(this.historydata.itemname==null){
       this.historydata.itemname = name;
@@ -133,6 +139,7 @@ export class InventoryComponent {
     )
   }
 
+  // Get History data to edit
   historydataedit(id){
     this.inven.editData(id).subscribe(
       (data)=>{

@@ -16,8 +16,10 @@ export class RegisterComponent {
   }
   constructor(private auth: AuthenticationService, private router: Router) { }
 
+
+  // Register function
   register(){
-    console.log(this.credentials)
+    // console.log(this.credentials)
     this.auth.register(this.credentials).subscribe(
       (res)=>{
         console.log(res)

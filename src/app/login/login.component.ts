@@ -12,18 +12,30 @@ export class LoginComponent  {
     email:'',
     password:'',
   }
+
   constructor(private auth: AuthenticationService, private router: Router) { }
 
+  // Login function 
   login(){
     // console.log(this.credentials)
+    if(this.credentials.password==''){
+      alert('Please Fill Password Field')
+    }
     this.auth.login(this.credentials).subscribe(
       
       (res)=>{
-        
+
+        console.log(res['code'])
+        if (res['code']=='BAD'){
+          // this.router.navigateByUrl('/login')
+          alert(res['message'])
+        }
+        else{
+          this.router.navigateByUrl('/inventory')
+          this.auth.saveToken(res.access_token)
+          this.auth.getToken()
+        }
         // console.log(res.access_token)
-        this.auth.saveToken(res.access_token)
-        this.auth.getToken()
-        this.router.navigateByUrl('/inventory')
       },
       err=>{
         console.error(err)

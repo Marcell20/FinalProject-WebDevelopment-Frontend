@@ -31,8 +31,8 @@ export interface TokenPayload2{
 
 export class passwordupdate{
   password : any
-  newpassword : any
-  newpassword_confirm : any
+  new_password : any
+  new_password_confirmation : any
 }
 // const header={
 //   'Content-Type': 'application/json',
