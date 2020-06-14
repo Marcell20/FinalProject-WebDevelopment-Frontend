@@ -25,11 +25,12 @@
                   </div>
                   <div class="form-group">
                     <label for="emailpassword" class="text-dark font-weight-bold">Password :</label>
-                    <input type="password" required class="form-control" id="emailpassword" style="border-radius: 15px;" placeholder="Password" name="password" [(ngModel)]="credentials.password">
+                    <input type="password" required minlength="8" class="form-control" id="emailpassword" style="border-radius: 15px;" placeholder="Password" name="password" [(ngModel)]="credentials.password">
                   </div>
                   <button type="submit" class="btn btn-dark btn-block" style="border-radius: 20px;">Submit</button>
                   <div class="p-2 mt-2" style="margin-left: 245pt;">
-                    <p> Don't Have An Account ?<a href="/register" class="text-light"> Register Here </a></p>   
+                    <p> Don't Have An Account ?<a href="/register" class="text-light"> Register Here </a></p>
+                    <p> <a href="/forget_password" class="text-light text-decoration-none" style="margin-left: 150px;"> Forget Password ? </a></p>   
                   </div>
                 </form>
               </div>

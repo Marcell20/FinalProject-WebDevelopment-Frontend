@@ -23,6 +23,7 @@ import { HomeComponent } from './home/home.component';
 import { HistoryService } from './history/history.service';
 import { AuthGuardService } from './auth-guard.service';
 import { HomeService } from './home/home.service';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 // import {AuthGuardService} from './auth-guard.service'; 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { HomeService } from './home/home.service';
     HistoryComponent,
     SidebarComponent,
     HomeComponent,
+    ForgetpasswordComponent,
   ],
   imports: [
     BrowserModule,

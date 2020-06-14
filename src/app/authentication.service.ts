@@ -28,6 +28,12 @@ export interface TokenPayload2{
   email:string
   password:string
 }
+
+export class passwordupdate{
+  password : any
+  newpassword : any
+  newpassword_confirm : any
+}
 // const header={
 //   'Content-Type': 'application/json',
 //   'Accept': 'application/json',
@@ -131,5 +137,9 @@ export class AuthenticationService {
     window.localStorage.removeItem('userToken');
     this.router.navigateByUrl('/main');
     return this.http.get('https://api.invform.me/logout');
+  }
+
+  public getforgetpassword(data){
+    return this.http.post('https://api.invform.me/updatepassword',data);
   }
 }

@@ -11,6 +11,7 @@ import { HistoryComponent } from './history/history.component';
 import {AuthenticationService} from './authentication.service';
 import { HomeComponent } from './home/home.component';
 import { AuthGuardService } from './auth-guard.service';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path : "history", component : HistoryComponent,  canActivate: 
   [AuthGuardService] },
   {path: "home",component: HomeComponent},
+  {path: "forget_password",component: ForgetpasswordComponent},
   {path : '**', redirectTo : '/main', pathMatch :'full'}
   
 ];
