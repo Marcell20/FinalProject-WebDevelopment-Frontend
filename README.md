@@ -25,7 +25,7 @@ Register the account and login. And you will had your own inventory online where
 <!-- Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io). -->
 
 ## The Code About
-The code is about how to make the frontend using angular js with different component and different services work when fetching the data from backend
+The code is about how to make the frontend using angular js and bootstrap with different component and different services work when fetching the data from backend.
 <!-- Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). -->
 
 ## Backend Link 
